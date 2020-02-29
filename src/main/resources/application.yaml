@@ -1,0 +1,7 @@
+logging:
+  level:
+    org.springframework: INFO
+
+server:
+  port: ${port:8080}
+
