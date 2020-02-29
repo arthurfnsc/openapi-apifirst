@@ -32,8 +32,6 @@ openapi-apifirst
 |       |            `-- "arthurfnsc"
 |       |                `-- "openapipifirst"
 |       |                    `-- "OpenapiApifirstApplication.kt"
-|       |
-|       |
 |       `-- "resources"
 |           |-- "application.yaml"
 |           |-- "application-dev.yaml"
