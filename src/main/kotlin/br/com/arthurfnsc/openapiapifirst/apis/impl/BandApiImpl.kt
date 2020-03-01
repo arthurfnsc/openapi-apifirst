@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController
 import java.util.UUID
 
 @RestController
-class BandApiImpl : V1Api {
+open class BandApiImpl : V1Api {
 
     override fun createBand(requestPostBand: RequestPostBand?): ResponseEntity<Band> {
         return super.createBand(requestPostBand)
