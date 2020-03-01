@@ -1,5 +1,6 @@
 HELP.md
 .gradle
+.gradletasknamecache
 bin/
 build/
 target/
