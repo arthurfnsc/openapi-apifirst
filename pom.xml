@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>br.com.arthurfnsc</groupId>
 	<artifactId>openapi-apifirst</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>openapi-apifirst</name>
 	<description>Demo project for Spring Boot</description>
 
