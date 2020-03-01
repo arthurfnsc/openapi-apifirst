@@ -231,7 +231,11 @@ components:
         members:
           $ref: "#/components/schemas/MemberArray"
         status:
-          $ref: "#/components/schemas/BandStatus"
+          type: string
+          enum:
+            - "BREAK_UP"
+            - "HIATUS"
+            - "ON_THE_ROAD"
         created_at:
           description: "Entry date creation"
           type: string
@@ -247,15 +251,6 @@ components:
       type: array
       items:
         $ref: "#/components/schemas/Band"
-
-    BandStatus:
-      description: "Band BandStatus"
-      type: string
-      enum:
-        - "BREAK_UP"
-        - "HIATUS"
-        - "ON_THE_ROAD"
-      additionalProperties: false
 
     Error:
       description: "Error"
@@ -360,7 +355,11 @@ components:
           type: string
           format: date
         status:
-          $ref: "#/components/schemas/BandStatus"
+          type: string
+          enum:
+            - "BREAK_UP"
+            - "HIATUS"
+            - "ON_THE_ROAD"
       additionalProperties: false
 
     RequestPostBandMember:
