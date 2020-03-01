@@ -15,17 +15,18 @@
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
-		<buildHelper.version>3.0.0</buildHelper.version>
-		<gsonFire.version>1.8.3</gsonFire.version>
-		<jacksonDatabindNullable.version>0.1.0</jacksonDatabindNullable.version>
+		<build-helper.version>3.0.0</build-helper.version>
+		<gson-fire.version>1.8.3</gson-fire.version>
+		<jackson-databind-nullable.version>0.1.0</jackson-databind-nullable.version>
 		<java.version>1.8</java.version>
 		<jsr305.version>3.0.2</jsr305.version>
 		<kotlin.version>1.3.61</kotlin.version>
 		<oltu.version>1.0.1</oltu.version>
-		<openAPIGen.version>4.3.0</openAPIGen.version>
+		<open-api-generator.version>4.2.3</open-api-generator.version>
 		<retrofit.version>2.5.0</retrofit.version>
+		<spring-boot.version>2.2.5.RELEASE</spring-boot.version>
 		<springfox.version>2.8.0</springfox.version>
-		<swaggerAnnotations.version>1.5.22</swaggerAnnotations.version>
+		<swagger-annotations.version>1.5.22</swagger-annotations.version>
 	</properties>
 
 	<dependencies>
@@ -56,7 +57,7 @@
 		<dependency>
 			<groupId>io.gsonfire</groupId>
 			<artifactId>gson-fire</artifactId>
-			<version>${gsonFire.version}</version>
+			<version>${gson-fire.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>io.springfox</groupId>
@@ -71,7 +72,7 @@
 		<dependency>
 			<groupId>io.swagger</groupId>
 			<artifactId>swagger-annotations</artifactId>
-			<version>${swaggerAnnotations.version}</version>
+			<version>${swagger-annotations.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>javax.validation</groupId>
@@ -91,7 +92,7 @@
 		<dependency>
 			<groupId>org.openapitools</groupId>
 			<artifactId>jackson-databind-nullable</artifactId>
-			<version>${jacksonDatabindNullable.version}</version>
+			<version>${jackson-databind-nullable.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -116,7 +117,7 @@
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>build-helper-maven-plugin</artifactId>
-				<version>${buildHelper.version}</version>
+				<version>${build-helper.version}</version>
 				<executions>
 					<execution>
 						<id>add-source</id>
@@ -126,8 +127,8 @@
 						</goals>
 						<configuration>
 							<sources>
-								<source>${project.build.directory}/generated/openapi-code-client/src/main/java</source>
-								<source>${project.build.directory}/generated/openapi-code-server/src/main/java</source>
+								<source>${project.build.directory}/generated-sources/openapi-code-client/src/main/java</source>
+								<source>${project.build.directory}/generated-sources/openapi-code-server/src/main/java</source>
 							</sources>
 						</configuration>
 					</execution>
@@ -137,6 +138,7 @@
 			<plugin>
 				<groupId>org.jetbrains.kotlin</groupId>
 				<artifactId>kotlin-maven-plugin</artifactId>
+				<version>${kotlin.version}</version>
 				<configuration>
 					<args>
 						<arg>-Xjsr305=strict</arg>
@@ -157,7 +159,7 @@
 			<plugin>
 				<groupId>org.openapitools</groupId>
 				<artifactId>openapi-generator-maven-plugin</artifactId>
-				<version>${openAPIGen.version}</version>
+				<version>${open-api-generator.version}</version>
 				<executions>
 					<execution>
 						<id>band-client</id>
@@ -165,8 +167,8 @@
 							<goal>generate</goal>
 						</goals>
 						<configuration>
-							<inputSpec>${project.basedir}/src/main/resources/openapi/bands-api.yaml</inputSpec>
-							<output>${project.build.directory}/generated/openapi-code-client</output>
+							<inputSpec>${project.basedir}/src/main/resources/openapi/bands-api2.yaml</inputSpec>
+							<output>${project.build.directory}/generated-sources/openapi-code-client</output>
 							<generatorName>java</generatorName>
 							<apiPackage>org.openapi.band.client.api</apiPackage>
 							<modelPackage>org.openapi.band.client.model</modelPackage>
@@ -182,8 +184,8 @@
 							<goal>generate</goal>
 						</goals>
 						<configuration>
-							<inputSpec>${project.basedir}/src/main/resources/openapi/bands-api.yaml</inputSpec>
-							<output>${project.build.directory}/generated/openapi-code-server</output>
+							<inputSpec>${project.basedir}/src/main/resources/openapi/bands-api2.yaml</inputSpec>
+							<output>${project.build.directory}/generated-sources/openapi-code-server</output>
 							<generatorName>spring</generatorName>
 							<apiPackage>org.openapi.band.server.api</apiPackage>
 							<modelPackage>org.openapi.band.server.model</modelPackage>
@@ -205,6 +207,7 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>${spring-boot.version}</version>
 			</plugin>
 		</plugins>
 	</build>
