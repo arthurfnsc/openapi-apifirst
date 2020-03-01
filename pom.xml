@@ -167,7 +167,7 @@
 							<goal>generate</goal>
 						</goals>
 						<configuration>
-							<inputSpec>${project.basedir}/src/main/resources/openapi/bands-api2.yaml</inputSpec>
+							<inputSpec>${project.basedir}/src/main/resources/openapi/bands-api.yaml</inputSpec>
 							<output>${project.build.directory}/generated-sources/openapi-code-client</output>
 							<generatorName>java</generatorName>
 							<apiPackage>org.openapi.band.client.api</apiPackage>
@@ -184,7 +184,7 @@
 							<goal>generate</goal>
 						</goals>
 						<configuration>
-							<inputSpec>${project.basedir}/src/main/resources/openapi/bands-api2.yaml</inputSpec>
+							<inputSpec>${project.basedir}/src/main/resources/openapi/bands-api.yaml</inputSpec>
 							<output>${project.build.directory}/generated-sources/openapi-code-server</output>
 							<generatorName>spring</generatorName>
 							<apiPackage>org.openapi.band.server.api</apiPackage>
