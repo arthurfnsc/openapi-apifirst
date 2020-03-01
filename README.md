@@ -24,6 +24,15 @@ foo@bar:~$ [./gradlew | gradlew.bat] clean bootRun
 ```console
 openapi-apifirst
 |   `-- "build"
+|       `-- "generated"
+|           |-- "openapi-code-client"
+|           |   `-- "src"
+|           |       `-- "main"
+|           |           `-- "java"
+|           `-- "openapi-code-server"
+|               `-- "src"
+|                   `-- "main"
+|                       `-- "java"
 |-- "src"
 |   `-- "main"
 |       |-- "kotlin"
@@ -46,7 +55,8 @@ openapi-apifirst
 |-- "gradlew.bat"
 |-- "plugins"
 |   |-- "ides.gradle"
-|   `-- "kotlin.gradle"
+|   |-- "kotlin.gradle"
+|   `-- "openapi.gradle"
 |-- "README.md"
 `-- "settings.gradle"
 ```
@@ -55,4 +65,5 @@ openapi-apifirst
 
 - [Gradle](https://gradle.org/)
 - [Kotlin](https://kotlinlang.org/)
+- [OpenAPI Generator](https://github.com/OpenAPITools/openapi-generator)
 - [Spring Boot 2.2](https://projects.spring.io/spring-boot/)
