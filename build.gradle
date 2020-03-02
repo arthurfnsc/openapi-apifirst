@@ -1,0 +1,77 @@
+plugins {
+
+	id "io.spring.dependency-management" version "1.0.9.RELEASE"
+	id "org.jetbrains.kotlin.jvm" version "1.3.61" apply false
+	id "org.jetbrains.kotlin.plugin.spring" version "1.3.61" apply false
+	id "org.openapi.generator" version "4.2.3" apply false
+	id "org.springframework.boot" version "2.2.5.RELEASE"
+}
+
+ext {
+
+	gsonFireVersion = "1.8.3"
+	gradleWrapperVersion = "6.0.1"
+	jacksonDatabindNullableVersion = "0.1.0"
+	jsr305Version = "3.0.2"
+	oltuVersion = "1.0.1"
+	openAPIGeneratorVersion = "4.2.3"
+	retrofitVersion = "2.5.0"
+	springFoxVersion = "2.9.2"
+
+	libs = [
+
+		kotlin : [
+			"org.jetbrains.kotlin:kotlin-reflect",
+			"org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+		],
+		openApiClient : [
+			"org.apache.oltu.oauth2:org.apache.oltu.oauth2.client:$oltuVersion",
+			"com.google.code.findbugs:jsr305:$jsr305Version",
+			"com.squareup.retrofit2:converter-gson:$retrofitVersion",
+			"com.squareup.retrofit2:converter-scalars:$retrofitVersion",
+			"com.squareup.retrofit2:retrofit:$retrofitVersion",
+			"io.gsonfire:gson-fire:$gsonFireVersion"
+		],
+		openApiServer : [
+			"org.openapitools:jackson-databind-nullable:$jacksonDatabindNullableVersion"
+		],
+		springBoot : [
+			"org.springframework.boot:spring-boot-starter",
+			"org.springframework.boot:spring-boot-starter-web"
+		],
+		swagger : [
+			"io.springfox:springfox-swagger2:$springFoxVersion",
+			"io.springfox:springfox-swagger-ui:$springFoxVersion"
+		]
+	]
+}
+
+group = "br.com.arthurfnsc"
+version = "1.0.0"
+
+repositories {
+	jcenter()
+	mavenCentral()
+}
+
+apply from: "$rootDir/plugins/kotlin.gradle"
+
+apply from: "$rootDir/plugins/ides.gradle"
+apply from: "$rootDir/plugins/openapi.gradle"
+
+dependencies {
+
+	implementation libs.kotlin
+	implementation libs.openApiClient
+	implementation libs.openApiServer
+	implementation libs.springBoot
+	implementation libs.swagger
+}
+
+configurations.all {
+	exclude group: "org.apache.oltu.oauth2", module: "org.apache.oltu.oauth2.common"
+}
+
+wrapper {
+	gradleVersion = "$gradleWrapperVersion"
+}

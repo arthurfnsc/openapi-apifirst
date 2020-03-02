@@ -1,10 +1,10 @@
 # openapi-apifirst
 
-Implementation using
+Implementação utilizando
 [OpenAPI 3.0](https://github.com/OAI/OpenAPI-Specification), Spring Boot,
-Kotlin, Gradle and Maven
+Kotlin, Gradle e Maven
 
-## Execution
+## Execução
 
 ### Clone
 
@@ -13,19 +13,19 @@ foo@bar:~$ git clone https://github.com/arthurfnsc/openapi-apifirst.git
 foo@bar:~$ cd openapi-apifirst
 ```
 
-### Linux | Windows Gradle execution
+### Execução Gradle Linux | Windows
 
 ```console
 foo@bar:~$ [./gradlew | gradlew.bat] clean bootRun
 ```
 
-### Linux | Windows Maven execution
+### Execução Maven Linux | Windows
 
 ```console
 foo@bar:~$ [./mvnw | mvnw.cmd] clean spring-boot:run 
 ```
 
-## Structure
+## Estrutura
 
 ```console
 openapi-apifirst
@@ -91,7 +91,7 @@ openapi-apifirst
 `-- "settings.gradle"
 ```
 
-## Architecture
+## Arquitetura
 
 - [Gradle](https://gradle.org/)
 - [Kotlin](https://kotlinlang.org/)
