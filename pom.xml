@@ -12,7 +12,7 @@
 	<artifactId>openapi-apifirst</artifactId>
 	<version>1.0.0</version>
 	<name>openapi-apifirst</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Implementation using OpenAPI 3.0, Spring Boot, Kotlin, Gradle and Maven</description>
 
 	<properties>
 		<build-helper.version>3.0.0</build-helper.version>
